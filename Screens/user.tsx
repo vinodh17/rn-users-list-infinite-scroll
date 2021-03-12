@@ -9,7 +9,7 @@ export const User =  (props: any) => {
 
 
 
-	<View style={styles.details}>
+	<View testID="user-wrapper" style={styles.details}>
 
 		<Image style={{height: 150, width: 150, borderRadius: 75}} source={{uri: props.route.params.picture.large}} />
 

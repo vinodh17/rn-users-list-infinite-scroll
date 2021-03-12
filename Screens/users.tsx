@@ -25,12 +25,16 @@ const Users =  (props: any) => {
 	}
 
   return (
-    <View style={styles.container}>
+    <View testID="users-wrapper" style={styles.container}>
       <Text onPress={toDetails}>Users Screen</Text>
 	<FlatList 
 
 	data={props.users}
-	renderItem={({item}) => <Text onPress={() => navToDetails(item)} style={styles.listItem}>{item.email}</Text>}
+	renderItem={({item}) => (
+		<Text onPress={() => navToDetails(item)} style={styles.listItem}>
+			{item.email}
+		</Text>)
+	}
 	keyExtractor={(item) => item.email}
 	onEndReached={() => setPage(page+1)}
 	onEndReachedThreshold={5}
